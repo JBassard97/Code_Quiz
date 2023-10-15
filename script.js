@@ -74,9 +74,12 @@ function viewHighscores() {
 }
 
 function clearHighscores() {
-  localStorage.clear();
-  highscoresContainer.textContent = "";
-  console.log("Local storage Cleared! Take a look:");
+//   Clearing local storage
+    localStorage.clear();
+//   Clearing content on page
+    highscoresContainer.textContent = "";
+    console.log("Local storage Cleared! Take a look:");
+    console.log(localStorage);
 }
 
 function highScoresPage() {
@@ -113,6 +116,12 @@ function highScoresPage() {
   startButton.style.display = "none";
 }
 
+// Handles when user fails quiz by returning them to beginning
+function gameOver() {
+      window.alert("Don't be discouraged, try again!");
+    beginning();
+}
+
 function codeQuiz() {
   // Re-establishes timer at 75
   timeLeft = 75;
@@ -130,7 +139,7 @@ function codeQuiz() {
 
     if (timeLeft <= 0) {
       clearInterval(timerInterval);
-      window.alert("Don't be discouraged, try again!");
+        gameOver();
     }
   }, 1000);
 
