@@ -7,18 +7,26 @@
     <title>Coding Quiz</title>
   </head>
   <body>
-    <header>
+    <header id="header">
       <!-- Reference to highscores page in top left -->
       <!-- scoreLink -->
       <h3 id="scoreLink" title="Go to Highscores page">View Highscores!</h3>
       <!-- Timer in top right  -->
-      <!-- secondsEl -->
+      <!-- timeDisplay in JS -->
       <h3 class="secondLeft"></h3>
     </header>
-    <main>
+    <main id="mainSection">
       <h1 class="questionField"></h1>
       <h4 class="answerField"></h4>
       <button id="startButton" title="Good Luck!">Start Quiz</button>
+      
+      <div id="highscoresContainer">
+
+      </div>
+
+      <button id="retryButton">Retry?</button>
+      <button id="clearScores">Clear Highscores</button>
+      
     </main>
     <script src="./script.js" defer></script>
   </body>

@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(237, 237, 248);
+  background-color: thistle;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -14,6 +14,10 @@ header {
   text-decoration: underline;
 }
 
+.secondLeft {
+    float: right;
+}
+
 main {
   margin-top: 0.5rem;
   display: flex;
@@ -23,6 +27,7 @@ main {
 
 button {
   margin-top: 1rem;
+  font-size: large;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: white;
   background-color: mediumpurple;
@@ -33,9 +38,28 @@ button {
 }
 
 button:hover {
-    background-color: mediumorchid;
+  background-color: mediumorchid;
 }
 
 button:active {
   background-color: blueviolet;
+}
+
+#form-container {
+  display: none;
+}
+
+#highscoresContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.styledScore {
+  font-size: larger;
+    font-weight: bold;
+    text-transform: uppercase;
+background: linear-gradient(to right, mediumpurple, thistle);
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
