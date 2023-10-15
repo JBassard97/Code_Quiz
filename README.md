@@ -8,7 +8,7 @@
 
 ## Usage/Deployed Link
 The link to the deployed application is:
-
+https://jbassard97.github.io/Code_Quiz/
 
 When loading the application, you're presented with the title of the quiz, a link to the highscore page (if there are highscores to show!), and description of the penalty should you answer incorrectly. Upon pressing the "Start Quiz" button, you will be displayed each question one at a time. You will not be able to proceed to the next one unless you answer correctly! Once complete, your time remaining on the clock will be stored along with your initials to be displayed under Highscores. In the event that there are no highscores in localStorage, the link to that page will become unusable and prompt you to contribute a score of your own!
 
