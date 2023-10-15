@@ -15,7 +15,7 @@ header {
 }
 
 .secondLeft {
-    float: right;
+  float: right;
 }
 
 main {
@@ -37,6 +37,19 @@ button {
   cursor: pointer;
 }
 
+/* Styling input box in Done Page */
+#text-input {
+  border-radius: 5px;
+  height: 1.5rem;
+  background-image: linear-gradient(to right, mediumpurple, thistle);
+  font-weight: bold;
+  border: transparent;
+}
+
+#submit-button {
+  margin-left: 1rem;
+}
+
 button:hover {
   background-color: mediumorchid;
 }
@@ -54,11 +67,13 @@ button:active {
   flex-direction: column;
 }
 
+/* Styling for each score on Highscore Page */
 .styledScore {
+  padding-left: 5px;
   font-size: larger;
-    font-weight: bold;
-    text-transform: uppercase;
-background: linear-gradient(to right, mediumpurple, thistle);
+  font-weight: bold;
+  text-transform: uppercase;
+  background: linear-gradient(to right, mediumpurple, thistle);
   border-radius: 5px;
   margin-top: 5px;
   margin-bottom: 5px;

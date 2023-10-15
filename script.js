@@ -39,12 +39,12 @@ function beginning() {
   questionField.textContent = "Coding Quiz Challenge";
   answerField.textContent =
     "Do your best to answer these coding questions before time runs out! Each incorrect answer will penalize you by 10 seconds!";
-    console.log("<<< Welcome to the Coding Quiz >>>");
-    // Hides Highscores list
+  console.log("<<< Welcome to the Coding Quiz >>>");
+  // Hides Highscores list
   highscoresContainer.style.display = "none";
   //   Makes scoreLink reappear
-    scoreLink.style.display = "inline";
-    scoreLink.style.visibility = "visible";
+  scoreLink.style.display = "inline";
+  scoreLink.style.visibility = "visible";
   // Makes timeDisplay reappear
   timeDisplay.style.display = "inline";
   // Hides Retry? Button
@@ -55,12 +55,12 @@ function beginning() {
   startButton.style.display = "block";
   //    TODO: If local storage empty, deny access to a Highscore page
   if (localStorage.length === 0) {
-      scoreLink.textContent = "No Highscores Yet!"
-      scoreLink.removeEventListener("click", viewHighscores);
+    scoreLink.textContent = "No Highscores Yet!";
+    scoreLink.removeEventListener("click", viewHighscores);
   } else {
-      scoreLink.textContent = "View Highscores!";
-      scoreLink.addEventListener("click", viewHighscores);
-      scoreLink.style.visibility = "visible";
+    scoreLink.textContent = "View Highscores!";
+    scoreLink.addEventListener("click", viewHighscores);
+    scoreLink.style.visibility = "visible";
   }
 }
 
@@ -69,16 +69,14 @@ beginning();
 
 function viewHighscores() {
   highScoresPage();
-//   keeping button function, changing user perception if coming from scoreLink specifically
-    retryButton.textContent = "Give it a go!";
+  //   keeping button function, changing user perception if coming from scoreLink specifically
+  retryButton.textContent = "Give it a go!";
 }
 
-
 function clearHighscores() {
-    localStorage.clear();
-    highscoresContainer.textContent = "";
-    console.log("Local storage Cleared! Take a look:");
-
+  localStorage.clear();
+  highscoresContainer.textContent = "";
+  console.log("Local storage Cleared! Take a look:");
 }
 
 function highScoresPage() {
@@ -102,8 +100,8 @@ function highScoresPage() {
     var scoreLine = document.createElement("div");
     // Setting the text content for each [i]
     scoreLine.textContent = score.initials + " " + score.score;
+    // setting a class to style easier in CSS
     scoreLine.setAttribute("class", "styledScore");
-    scoreLine.style.border = "4px solid ";
     highscoresContainer.appendChild(scoreLine);
   }
 
@@ -138,8 +136,6 @@ function codeQuiz() {
 
   //   Making question's text slightly smaller
   questionField.setAttribute("style", "font-size:25px");
-  //   Clearing quiz description field
-  answerField.textContent = "";
   //   Making startButton disappear when clicked
   startButton.style.display = "none";
   // mainSection.removeChild(retryButton);
@@ -489,9 +485,11 @@ function codeQuiz() {
 
   //   TODO: QUESTION #1
   function question1() {
+    //   Clearing quiz description field
+    answerField.textContent = "";
     questionField.textContent =
-      "Which of the following are NOT a JavaScript data type?";
-    answerChoices = ["BigInt", "Figure", "String", "Number"];
+      "Which one of the following is NOT a JavaScript data type?";
+    answerChoices = ["Figure", "String", "Boolean", "Null", "Symbol"];
     correctAnswer = "Figure";
 
     createQuizPage1();
@@ -500,9 +498,14 @@ function codeQuiz() {
   // TODO: QUESTION #2
   function question2() {
     answerField.textContent = "";
-    questionField.textContent = "Question 2!";
-    answerChoices = ["1", "2", "yes", "4"];
-    correctAnswer = "yes";
+    questionField.textContent =
+      "What does the '===' operator do in JavaScript?";
+    answerChoices = [
+      "Checks if two values are equal",
+      "Checks if two values are of similar type and value",
+      "Assigns a value to a variable",
+    ];
+    correctAnswer = "Checks if two values are of similar type and value";
 
     createQuizPage2();
   }
@@ -510,9 +513,10 @@ function codeQuiz() {
   // TODO: QUESTION #3
   function question3() {
     answerField.textContent = "";
-    questionField.textContent = "Question 3!";
-    answerChoices = ["fdsfs", "&*(&", "plsWork", "okay"];
-    correctAnswer = "plsWork";
+    questionField.textContent =
+      "Google Fonts, JQuery, and Bootstrap are all examples of?";
+    answerChoices = ["SSH Keys", "Applications", "API's", "Event Listeners"];
+    correctAnswer = "API's";
 
     createQuizPage3();
   }
@@ -520,9 +524,15 @@ function codeQuiz() {
   // TODO: QUESTION #4
   function question4() {
     answerField.textContent = "";
-    questionField.textContent = "Question 4!";
-    answerChoices = ["hi", "hello", "yes", "yessir"];
-    correctAnswer = "yes";
+    questionField.textContent =
+      "What is the purpose of the localStorage object?";
+    answerChoices = [
+      "Parsing JSON",
+      "Storing browser history",
+      "Creating animations",
+      "Storing session data",
+    ];
+    correctAnswer = "Storing session data";
 
     createQuizPage4();
   }
@@ -530,9 +540,10 @@ function codeQuiz() {
   // TODO: QUESTION #5
   function question5() {
     answerField.textContent = "";
-    questionField.textContent = "Question 5!";
-    answerChoices = ["yes", "no", "no"];
-    correctAnswer = "yes";
+    questionField.textContent =
+      "Is everything in JavaScript considered an 'object?'";
+    answerChoices = ["Yes", "No"];
+    correctAnswer = "Yes";
 
     createQuizPage5();
   }
@@ -577,10 +588,10 @@ function codeQuiz() {
         initials,
         score,
       };
-      
-        // If anything in localStorage, add the contents of its array to score array
-        // This line lets new scores display with old ones!
-        if (localStorage.length > 0) {
+
+      // If anything in localStorage, add the contents of its array to score array
+      // This line lets new scores display with old ones!
+      if (localStorage.length > 0) {
         scoreArray.push(...currentParsedScores);
       }
       //   scoreArray now contains the scoreObject
